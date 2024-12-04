@@ -4,6 +4,12 @@ export const postType = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  groups: [
+    {
+      title: 'seo',
+      name: 'seo',
+    }
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -35,6 +41,11 @@ export const postType = defineType({
       name: 'categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+    }),
+    defineField({
+      name: 'seo',
+      type: 'seo',
+      group: 'seo',
     }),
   ],
 })
